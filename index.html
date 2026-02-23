@@ -60,7 +60,14 @@ button:disabled{opacity:.6;cursor:not-allowed}
 .footer{margin-top:14px;padding:12px;color:var(--muted);text-align:center;font-size:12px}
 .hidden{display:none}
 @media (max-width:600px){
-  .board-inner{gap:4px;padding:4px}
+  .board-inner{  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--cols),1fr);
+  gap:6px;
+  background:#1e293b;
+  padding:8px;
+  border-radius:12px;
+  border:1px solid #334155;}
   .col-btn{font-size:12px;padding:6px}
   .qtext{font-size:16px}
 }
