@@ -6,12 +6,15 @@ const ASSETS = [
   "./icon-192.png",
   "./icon-512.png"
 ];
-
-self.addEventListener("install", event => {
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(ASSETS);
-    })
+    caches.keys().then(keys => 
+      Promise.all(
+        keys
+          .filter(key => key !== CACHE_NAME) // keep only the current cache
+          .map(key => caches.delete(key))   // delete old caches
+      )
+    )
   );
 });
 
