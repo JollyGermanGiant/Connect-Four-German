@@ -1,4 +1,4 @@
-const CACHE_NAME = "german-connect4-v1";
+const CACHE_NAME = "german-connect4-v3";
 const ASSETS = [
   "./",
   "./index.html",
